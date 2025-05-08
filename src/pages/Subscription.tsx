@@ -266,10 +266,3 @@ const Subscription = () => {
 };
 
 export default Subscription;
-</current-code>
-
-<pp-write filepath="src/App.tsx" partial>
-  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-  <Route path="/" element={<Index />} />
-  <Route path="/subscription" element={<Subscription />} />
-  <Route path="*" element={<NotFound />} />
