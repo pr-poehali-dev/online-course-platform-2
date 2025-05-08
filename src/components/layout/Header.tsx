@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import Icon from '@/components/ui/icon';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,9 +11,11 @@ const Header = () => {
           <div className="bg-primary rounded-md p-1">
             <Icon name="Podcast" className="text-white h-6 w-6" />
           </div>
-          <span className="font-heading font-bold text-xl text-primary">SkillMaster</span>
+          <span className="font-heading font-bold text-xl text-primary">
+            SkillMaster
+          </span>
         </Link>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           <NavLink href="#features">Преимущества</NavLink>
           <NavLink href="#content">Содержание</NavLink>
@@ -22,15 +23,17 @@ const Header = () => {
           <NavLink href="#pricing">Цены</NavLink>
           <NavLink href="#faq">FAQ</NavLink>
         </nav>
-        
+
         <div className="flex items-center gap-4">
           <Button variant="outline" className="hidden md:flex">
             Войти
           </Button>
-          <Button>
-            Купить курс
-            <Icon name="ArrowRight" className="ml-1" />
-          </Button>
+          <Link to="/subscription">
+            <Button>
+              Купить курс
+              <Icon name="ArrowRight" className="ml-1" />
+            </Button>
+          </Link>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Icon name="Menu" />
           </Button>
@@ -40,9 +43,15 @@ const Header = () => {
   );
 };
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
   return (
-    <a 
+    <a
       href={href}
       className="text-secondary/80 hover:text-primary transition-colors duration-200 font-medium"
     >
